@@ -1,0 +1,7 @@
+div.btn-group.dropdown
+  button.btn.btn-default.dropdown-toggle(type="button",data-toggle="dropdown")
+    | {{currentLocaleDisplayName}} &nbsp;
+    span.caret
+  ul.dropdown-menu
+    li(ng-repeat="lang in localesDisplayNames")
+      a(href="#",ng-click="changeLanguage(lang)") {{lang}}
