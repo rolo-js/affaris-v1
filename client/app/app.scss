@@ -22,6 +22,11 @@ body {
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
+@import 'jarvis/_avariables.scss';
+@import 'jarvis/_main-colorpallet.scss';
+@import 'jarvis/arrowbox.scss';
+@import 'jarvis/plugin-jarviswidget.scss';
+@import 'jarvis/smartadmin-skins.scss';
 @import 'languageSelector/languageSelector.scss';
 @import 'modal/modal.scss';
 // endinjector

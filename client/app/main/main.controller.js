@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('affarisApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', ["$scope", "$http", "socket","Auth", function ($scope, $http, socket,Auth) {
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       socket.syncUpdates('thing', $scope.awesomeThings);
     });
-
+    $scope.currentUser = Auth.getCurrentUser();
     $scope.addThing = function() {
       if($scope.newThing === '') {
         return;
@@ -24,4 +24,4 @@ angular.module('affarisApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
-  });
+  }]);

@@ -16,8 +16,9 @@ div.navbar.navbar-default.navbar-fixed-top(ng-controller='NavbarCtrl')
           a(href='/admin') Admin
 
       ul.nav.navbar-nav.navbar-right
-        li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/signup")}')
-          a(href='/signup') Sign up
+        li(ng-show='isLoggedIn()', ng-class='{active: isActive("/signup")}')
+          a(href='#') 
+            i.fa.fa-lg.fa-bell.text-danger
 
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/login")}')
           a(href='/login') Login

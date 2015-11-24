@@ -2,11 +2,85 @@ div(ng-include='"components/navbar/navbar.html"')
 
 header#banner.hero-unit
   .container
-    h1 {{"Hola Hola" | translate}}
+    h1 {{"Hola Hola" | translate}} {{currentUser.name}}
     p.lead Kick-start your next web app with Angular Fullstack
 
     
-    img(src='assets/images/yeoman.png', alt='I\'m Yeoman')
+    img(src='assets/images/yeoman.png', alt="I\'m Yeoman")
+br
+.container
+  section(id="widget-grid",widget-grid)
+    .row
+      div.col-xs-12.col-sm-6.col-md-6.col-lg-4
+        div(id="default-widget-widget",jarvis-widget)
+          header
+            h2 Default Widget
+          div.widget-body.custom-scroll
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+            p Widget comes with a default 10 padding to the body which can be removed by adding the class <code>.no-padding</code>              to the <code>.widget-body</code> class.
+
+      div.col-xs-12.col-sm-6.col-md-6.col-lg-4
+        div(id="default-widget-widget2",jarvis-widget)
+            header
+              h2 Segundo
+            div.widget-body.custom-scroll
+              p Now is the time
+      div.col-xs-12.col-sm-6.col-md-6.col-lg-4
+        div(id="default-widget-widget4",jarvis-widget) 
+            header
+              h2 Tercero
+              div.widget-toolbar
+                div.btn-group(data-dropdown)
+                  button.btn.dropdown-toggle.btn-xs
+                    i.fa.fa-ellipsis-v.fa-fw
+                  ul.dropdown-menu.pull-right
+                    li
+                      a(href-void) Opcion 1
+                    li
+                      a(href-void) Opcion 2
+                    li
+                      a(href-void) Opcion 3
+            div.widget-body.custom-scroll
+              p Now is the time                      
+      div.col-xs-12.col-sm-6.col-md-6.col-lg-6
+        div(id="default-widget-widget7",jarvis-widget)
+            header
+              h2 Segundo
+            div.widget-body.custom-scroll
+              p Now is the time
+      div.col-xs-12.col-sm-6.col-md-6.col-lg-6
+        div(id="default-widget-widget8",jarvis-widget)
+            header
+              h2 Segundo
+            div.widget-body.custom-scroll
+              p Now is the time
+
+
+
+
+
+
+
 
 .container
   .row
