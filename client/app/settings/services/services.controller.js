@@ -12,10 +12,13 @@ angular.module('affarisApp')
       columnDefs:[
         {field:'name'},
         {field:'code',width:100}
-      ]//,
-      //enableHorizontalScrollbar: uiGridConstants.scrollbars.NEVER,
-      //enableVerticalScrollbar: uiGridConstants.scrollbars.NEVER,
+      ]
+    }
 
+    $scope.panel2Options={
+      title:'Dashboard',
+      allowFullscreen:true,
+      menuitems:[{name:'Uno'},{name:'dos'}]
     }
     $scope.svcGridOptions.onRegisterApi = function ( gridApi ) {
       $scope.gridApi = gridApi;

@@ -1,4 +1,4 @@
-div(ng-include='"components/navbar/navbar.html"')
+
 .container
   .row
     div.col-xs-12.col-sm-12.col-md-6.col-lg-4
@@ -6,15 +6,7 @@ div(ng-include='"components/navbar/navbar.html"')
         div.grid(id="grid1",ui-grid="svcGridOptions", ui-grid-auto-resize)
               
     div.col-xs-12.col-sm-12.col-md-6.col-lg-4
-      div(panel)
-        div.dropdown.pull-right
-          a.btn.btn-default.dropdown-toggle(data-toggle="dropdown")
-            i.fa.fa-ellipsis-v.fa-fw
-          ul.dropdown-menu
-            li
-              a(href="#") Action
-            li
-              a(href="#") One more Action
-            
+      div(panel="panel2Options")
+        | hello
             
               

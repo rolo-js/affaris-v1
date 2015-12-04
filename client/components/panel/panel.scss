@@ -7,61 +7,64 @@
   header{
     padding: 15px ;
     font-size: 1.6em;
-    background-color: #fafafa;
     border-bottom:  1px solid #e2e2e7;
-    div{
+    position: relative;
+    >div.htitle{
       display: inline-block;
+    }
+    >div.controls{
+      display: inline-block;
+      opacity: 0;
+      transition : 0.3s;
+      &.active{
+        opacity: 1;
+      }
+      >div.dropdown{
+        display: inline-block;
+      }
+    }
+  }
 
-    }
-  }
-  .controls{
-    float: right;
-    opacity: 0;
-    transition : 0.3s;
-    &.active{
-      opacity: 1;
-    }
-  }
   .p-body{
     padding: 15px 0 15px 15px;
     overflow-y: scroll;
     height: 450px;
+
   }
   .p-body-fullgrid{
     padding: 0;
-    overflow:hidden;
-    height: 100%;
-    min-height: 450px;
+    height: 450px;
+
   }
 
   /*
    * SCROLLER
    */
-	.p-body::-webkit-scrollbar {
-		-webkit-overflow-scrolling: touch;
-		height: 15px;
-		width: 15px;
-	 }
-	.p-body::-webkit-scrollbar-button:start:decrement,
-	.p-body::-webkit-scrollbar-button:end:increment {
-		background: transparent;
-		display: block;
-		height: 0;
-	}
-	.p-body::-webkit-scrollbar-track {
-
-    background-clip: padding-box;
-    // border-width: 0 0 0 4px;
-    // border: solid black;
-    background-color: transparent;
-  }
-  .p-body::-webkit-scrollbar-thumb {
-		background-clip: padding-box;
-    border: 1px solid transparent;
-    border-width: 0 0 0 5px;
-    background-color: #e2e2e7;
-
-  }
+	// .p-body::-webkit-scrollbar {
+	// 	-webkit-overflow-scrolling: touch;
+	// 	height: 15px;
+	// 	width: 15px;
+	//  }
+	// .p-body::-webkit-scrollbar-button:start:decrement,
+	// .p-body::-webkit-scrollbar-button:end:increment {
+	// 	background: transparent;
+	// 	display: block;
+	// 	height: 0;
+	// }
+	// .p-body::-webkit-scrollbar-track {
+  //
+  //   background-clip: padding-box;
+  //   // border-width: 0 0 0 4px;
+  //   // border: solid black;
+  //   background-color: transparent;
+  // }
+  // .p-body::-webkit-scrollbar-thumb {
+	// 	background-clip: padding-box;
+  //   border: 1px solid transparent;
+  //   border-width: 0 0 0 5px;
+  //   background-color: #e2e2e7;
+  //
+  // }
 
 
 /*
@@ -87,7 +90,7 @@
       background: none;
     }
   }
-  label.form-control{
+  .form-group label{
     font-weight: 300;
     color: #888;
     margin-bottom: 0;
