@@ -1,32 +1,36 @@
 'use strict';
 
 angular.module('affarisApp')
-  .controller('NavbarCtrl', ["$rootScope","$scope", "$location", "Auth" ,"$translate",function ($rootScope,$scope, $location, Auth,$translate) {
+  .controller('NavbarCtrl',
+  ["$rootScope",
+  "$scope",
+  "$location",
+  "Auth" ,
+  "$translate",
 
-    $rootScope.$on('$translateChangeSuccess',function(){
-      $translate(['Inicio','Proyectos']).then(function (trans) {
+  function ($rootScope,
+            $scope,
+            $location,
+            Auth,
+            $translate) {
+    $scope.menu=[];
+    function setStrings() {
+      $translate(['Inicio','Servicios']).then(function (trans) {
            $scope.menu = [{
              'title': trans.Inicio,
              'link': '/'
            },{
-             'title': trans.Proyectos,
-             'link': '/projects'
+             'title': trans.Servicios,
+             'link': '/services'
            }];
 
          });
+    }
+    $rootScope.$on('$translateChangeSuccess',function(){
+      setStrings() ;
     });
 
-    $translate(['Inicio','Proyectos']).then(function (trans) {
-         $scope.menu = [{
-           'title': trans.Inicio,
-           'link': '/'
-         },{
-           'title': trans.Proyectos,
-           'link': '/projects'
-         }];
-
-       });
-
+    setStrings() ;
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

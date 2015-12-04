@@ -1,0 +1,20 @@
+header
+  div
+    i(ng-if="panel.icon").fa.fa-fw.fa-cog 
+    | {{panel.title}}
+  div.controls
+    a.btn.btn-default(href="#",ng-click="fullscreen()",ng-if="allowFullscreen",ng-hide="isfull")
+      i.fa.fa-arrows-alt.fa-fw
+    a.btn.btn-default(href="#",ng-click="fullscreen()",ng-show="isfull")
+      i.fa.fa-compress.fa-fw
+    div.dropdown.pull-right(ng-if="hasMenu")
+      a.btn.btn-default.dropdown-toggle(data-toggle="dropdown")
+        i.fa.fa-ellipsis-v.fa-fw
+      ul.dropdown-menu
+        li
+          a(href="#",ng-click="toggleFilters()") Filtros
+        li(ng-repeat="item in menuitems")
+          a(href="#")
+            | {{item.name}}
+            
+div.p-body(ng-transclude)

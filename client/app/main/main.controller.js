@@ -24,4 +24,15 @@ angular.module('affarisApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+    //PANEL TEST
+    $scope.panelOptions = {
+      title : 'Información General',
+      allowFullscreen : true,
+      menuitems :[
+        { name:'First' },{name:'Segundo'}
+      ]
+    };
+
+
   }]);

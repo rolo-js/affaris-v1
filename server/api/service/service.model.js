@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
 var ServiceSchema = new Schema({
   name: String,
   info: String,
+  code: String,
   stdCostPerHour: Number,
   stdPricePerHour: Number,
   active: Boolean

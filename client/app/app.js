@@ -8,7 +8,9 @@ angular.module('affarisApp', [
   'ui.router',
   'ui.bootstrap',
   'pascalprecht.translate',// angular-translate
-  'tmh.dynamicLocale'// angular-dynamic-locale
+  'tmh.dynamicLocale',// angular-dynamic-locale
+  'ui.grid',
+  'ui.grid.autoResize'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

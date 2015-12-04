@@ -7,7 +7,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 /**
  * App-wide Styles
  */
-
+body{
+  font-family:"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #E2E2E7;
+}
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -22,6 +25,7 @@ body {
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
+@import 'settings/services/services.scss';
 @import 'jarvis/_avariables.scss';
 @import 'jarvis/_main-colorpallet.scss';
 @import 'jarvis/arrowbox.scss';
@@ -29,4 +33,5 @@ body {
 @import 'jarvis/smartadmin-skins.scss';
 @import 'languageSelector/languageSelector.scss';
 @import 'modal/modal.scss';
+@import 'panel/panel.scss';
 // endinjector
