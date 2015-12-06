@@ -21,6 +21,18 @@ exports.index = function(req, res) {
 };
 
 /**
+ * Get summary of users for searchpanel
+ * restriction: 'admin'
+ */
+exports.summary = function(req, res) {
+  console.log('before summary');
+  User.find({}, 'email nick', function (err, users) {
+    if(err) return res.status(500).send(err);
+    res.status(200).json(users);
+  });
+};
+
+/**
  * Creates a new user
  */
 exports.create = function (req, res, next) {

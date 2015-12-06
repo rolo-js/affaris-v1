@@ -25,6 +25,9 @@ var UserSchema = new Schema({
 /**
  * Virtuals
  */
+// Siempre regresa los virtuales
+UserSchema.set('toObject', { getters: true });
+UserSchema.set('toJSON', { getters: true });
  UserSchema
   .virtual('nick')
   .get(function(){

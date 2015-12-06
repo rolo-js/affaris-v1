@@ -1,0 +1,16 @@
+.row
+  div.col-xs-12.col-sm-6.col-md-6.col-lg-4
+    div(panel="panelOptions",fullgrid="true")
+      div.grid(id="userSearchGrid",ui-grid="gridOptions", ui-grid-auto-resize)
+  div.col-xs-12.col-sm-6.col-md-6.col-lg-8
+    div.selector
+      ul.nav.nav-pills
+        li(ui-sref-active="active")
+          a(ui-sref="users.dash") Dashboard
+        li(ui-sref-active="active")
+          a(ui-sref="users.detail") Detalle
+        li(ui-sref-active="active")
+          a(ui-sref="users.list") Lista
+      hr
+    div.ui-view
+    

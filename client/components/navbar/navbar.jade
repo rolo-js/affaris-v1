@@ -10,10 +10,26 @@ div.navbar.navbar-default.navbar-fixed-top(ng-controller='NavbarCtrl')
 
     div#navbar-main.navbar-collapse.collapse(collapse='isCollapsed')
       ul.nav.navbar-nav
-        li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
-          a(ng-href='{{item.link}}') {{item.title}}
-        li(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
-          a(href='/admin') Admin
+        li
+          a(href="#") Clientes
+        li
+          a(href="#") Proyectos
+        li
+          a(href="#") Tareas
+        li.dropdown
+          a.dropdown-toggle(href="#",data-toggle="dropdown") 
+            i.fa.fa-cog
+          ul.dropdown-menu
+            li
+              a(ui-sref="users.dash") Usuarios
+            li
+              a(ui-sref="services") Servicios
+          
+          
+        //- li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+        //-   a(ng-href='{{item.link}}') {{item.title}}
+        //- li(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
+        //-   a(href='/admin') Admin
 
       ul.nav.navbar-nav.navbar-right
         li(ng-show='isLoggedIn()', ng-class='{active: isActive("/signup")}')

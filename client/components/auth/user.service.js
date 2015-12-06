@@ -17,6 +17,12 @@ angular.module('affarisApp')
         params: {
           id:'me'
         }
+      },
+      summary:{
+        method: 'GET',
+        url:'/api/users/summary',
+        cache:true,
+        isArray: true
       }
 	  });
   });
