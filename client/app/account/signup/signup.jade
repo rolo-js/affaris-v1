@@ -7,8 +7,15 @@ div(ng-include='"components/navbar/navbar.html"')
       form.form(name='form', ng-submit='register(form)', novalidate='')
         .form-group(ng-class='{ "has-success": form.name.$valid && submitted,\
         "has-error": form.name.$invalid && submitted }')
-          label Name
-          input.form-control(type='text', name='name', ng-model='user.name', required='')
+          label First Name
+          input.form-control(type='text', name='first', ng-model='user.person.first', required='')
+          p.help-block(ng-show='form.name.$error.required && submitted')
+            | A name is required
+
+        .form-group(ng-class='{ "has-success": form.name.$valid && submitted,\
+        "has-error": form.name.$invalid && submitted }')
+          label Last Name
+          input.form-control(type='text', name='last', ng-model='user.person.last', required='')
           p.help-block(ng-show='form.name.$error.required && submitted')
             | A name is required
 
@@ -33,7 +40,7 @@ div(ng-include='"components/navbar/navbar.html"')
             | {{ errors.password }}
 
         div
-          button.btn.btn-inverse.btn-lg.btn-login(type='submit')
+          button.btn.btn-lg.btn-login(type='submit')
             | Sign up
           = ' '
           a.btn.btn-default.btn-lg.btn-register(href='/login')

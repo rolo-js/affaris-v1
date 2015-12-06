@@ -2,7 +2,7 @@
 
 angular.module('affarisApp')
   .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
-    $scope.user = {};
+    $scope.user = { person:{}};
     $scope.errors = {};
 
     $scope.register = function(form) {
@@ -10,7 +10,7 @@ angular.module('affarisApp')
 
       if(form.$valid) {
         Auth.createUser({
-          name: $scope.user.name,
+          person: $scope.user.person,
           email: $scope.user.email,
           password: $scope.user.password
         })

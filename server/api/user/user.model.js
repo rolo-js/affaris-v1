@@ -5,13 +5,15 @@ var Schema = mongoose.Schema;
 var crypto = require('crypto');
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
+
 var UserSchema = new Schema({
-  name: String,
   email: { type: String, lowercase: true },
   role: {
     type: String,
     default: 'user'
   },
+  alias: String,
+  person: Schema.Types.Mixed,
   hashedPassword: String,
   provider: String,
   salt: String,
@@ -23,6 +25,19 @@ var UserSchema = new Schema({
 /**
  * Virtuals
  */
+ UserSchema
+  .virtual('nick')
+  .get(function(){
+    var result = this.alias;
+    if (!result){
+      result = this.person ? this.person.first : '';
+    }
+    if (!result){
+      result =this.email.replace(/@.*/,'');
+    }
+    return result;
+  });
+
 UserSchema
   .virtual('password')
   .set(function(password) {

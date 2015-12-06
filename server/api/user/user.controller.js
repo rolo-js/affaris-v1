@@ -89,7 +89,7 @@ exports.me = function(req, res, next) {
   }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
     if (err) return next(err);
     if (!user) return res.status(401).send('Unauthorized');
-    res.json(user);
+    res.json(user.toObject({virtuals:true}));
   });
 };
 

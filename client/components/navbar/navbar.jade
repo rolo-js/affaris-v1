@@ -25,7 +25,7 @@ div.navbar.navbar-default.navbar-fixed-top(ng-controller='NavbarCtrl')
 
         li.dropdown(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
           a.dropdown-toggle(href='#',data-toggle='dropdown')
-            span {{ getCurrentUser().name }} &nbsp;
+            span {{ getCurrentUser().nick }} &nbsp;
               i.fa.fa-user.fa-lg
           ul.dropdown-menu
             li
