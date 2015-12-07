@@ -11,19 +11,19 @@ div.navbar.navbar-default.navbar-fixed-top(ng-controller='NavbarCtrl')
     div#navbar-main.navbar-collapse.collapse(collapse='isCollapsed')
       ul.nav.navbar-nav
         li
-          a(href="#") Clientes
+          a(href="#") {{'Clientes' | translate}}
         li
-          a(href="#") Proyectos
+          a(href="#") {{'Proyectos' | translate}}
         li
-          a(href="#") Tareas
-        li.dropdown
+          a(href="#") {{'Tareas' | translate}}
+        li.dropdown(ui-sref-active-if="admin")
           a.dropdown-toggle(href="#",data-toggle="dropdown") 
             i.fa.fa-cog
           ul.dropdown-menu
             li
-              a(ui-sref="users.dash") Usuarios
+              a(ui-sref="admin.users.dash") {{'Usuarios' | translate}}
             li
-              a(ui-sref="services") Servicios
+              a(ui-sref="admin.services") {{'Servicios' | translate}}
           
           
         //- li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
@@ -37,7 +37,9 @@ div.navbar.navbar-default.navbar-fixed-top(ng-controller='NavbarCtrl')
             i.fa.fa-lg.fa-bell.text-danger
 
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/login")}')
-          a(href='/login') Login
+          a(href='/login') {{'Login' | translate}}
+        li
+          div(language-selector)
 
         li.dropdown(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
           a.dropdown-toggle(href='#',data-toggle='dropdown')
@@ -45,6 +47,6 @@ div.navbar.navbar-default.navbar-fixed-top(ng-controller='NavbarCtrl')
               i.fa.fa-user.fa-lg
           ul.dropdown-menu
             li
-              a(href='/settings') Settings
+              a(href='/settings') {{'Configuracion' | translate}}
             li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
-              a(href='', ng-click='logout()') Logout
+              a(href='', ng-click='logout()') {{'Logout' | translate}}

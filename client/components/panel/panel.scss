@@ -30,19 +30,19 @@
     overflow-y: scroll;
     &.nopadding{
       padding: 0;
-      .ui-grid{
-        border:none;
-      }
+
     }
     &.std-height{
       height:450px;
     }
+    .ui-grid{
+      border:none;
+      height:420px;
+    }
   }
 
 
-  .pbody.std-height{
-    height: 450px;
-  }
+
 
 
 /*

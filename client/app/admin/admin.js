@@ -5,30 +5,30 @@ angular.module('affarisApp')
     $stateProvider
       .state('admin', {
         url: '/admin',
-        templateUrl: 'app/admin/admin.html',
-        controller: 'AdminCtrl'
+        template: '<ui-view />',
+        abstract:true
       });
     $stateProvider
-      .state('users', {
+      .state('admin.users', {
         abstract : true,
         url: '/users',
         templateUrl: 'app/admin/users/users.html',
         controller:'UsersSearchCtrl'
       });
     $stateProvider
-      .state('users.dash', {
+      .state('admin.users.dash', {
         url: '/dash',
         templateUrl: 'app/admin/users/users-dash.html',
         controller: 'UsersDashCtrl'
       });
     $stateProvider
-      .state('users.list', {
+      .state('admin.users.list', {
         url: '/list',
         templateUrl: 'app/admin/users/users-list.html',
         controller: 'UsersListCtrl'
       });
     $stateProvider
-      .state('users.detail', {
+      .state('admin.users.detail', {
         url: '/detail/{id}',
         templateUrl: 'app/admin/users/users-detail.html',
         controller: 'UsersDetailCtrl'

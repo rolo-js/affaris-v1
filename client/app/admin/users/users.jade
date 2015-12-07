@@ -3,7 +3,7 @@
     div(panel="panelOptions")
       div.hidden-xs.grid(id="userSearchGrid",ui-grid="gridOptions", ui-grid-auto-resize ui-grid-selection)
       div.hidden-sm.hidden-md.hidden-lg
-        ui-select(ng-model="selectedUser",theme="bootstrap")
+        ui-select(ng-model="user.selected",theme="bootstrap",on-select="phoneSelected($item)")
           ui-select-match(placeholder="{{'SeleccioneOBusque' | translate}}")
             span(ng-bind="$select.selected.email")
           ui-select-choices(repeat="item in (userlist | filter: $select.search) track by item._id")
@@ -12,10 +12,10 @@
     div.selector
       ul.nav.nav-pills
         li(ui-sref-active="active")
-          a(ui-sref="users.dash") Dashboard
+          a(ui-sref="admin.users.dash") Dashboard
         li(ui-sref-active="active",ng-class="{disabled: !selectedUser}",ng-disabled="!selectedUser")
-          a(ui-sref="users.detail({id:selectedUser.id})") {{selectedUser ? selectedUser.nick : 'User'}}
+          a(ui-sref="admin.users.detail({id:selectedUser.id})") {{selectedUser ? selectedUser.nick : 'User'}}
         li(ui-sref-active="active")
-          a(ui-sref="users.list") Lista
+          a(ui-sref="admin.users.list") Lista
       hr
     div.ui-view

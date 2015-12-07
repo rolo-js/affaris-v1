@@ -1,12 +1,17 @@
 {
-    "directives.language-select.Language": "Idioma",
-    "Inicio" : "Inicio",
-    "Login" : "Bienvenido",
-    "Hola Hola" : "Hola Hola" ,
-    "Proyectos" : "Proyectos",
-    "Servicios" : "Servicios",
-    "SeleccioneOBusque": "Seleccione o búsque...",
-    "Filtros" : "Filtros",
-    "Agregar" : "Agregar",
-    "Reportes":"Reportes"
+  "directives.language-select.Language": "Idioma",
+  "Inicio": "Inicio",
+  "Login": "Iniciar Sesión",
+  "Logout": "Finalizar Sesión",
+  "Proyectos": "Proyectos",
+  "Servicios": "Servicios",
+  "SeleccioneOBusque": "Seleccione o búsque...",
+  "Filtros": "Filtros",
+  "Agregar": "Agregar",
+  "Reportes": "Reportes",
+  "Usuarios": "Usuarios",
+  "Clientes": "Clientes",
+  "Configuracion": "Configuración",
+  "Tareas": "Tareas"
+
 }

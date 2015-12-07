@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('affarisApp')
-  .directive('panel',['$animate','$rootScope' ,function ($animate,$rootScope) {
+  .directive('panel',['$animate','$rootScope','$timeout' ,function ($animate,$rootScope,$timeout) {
 
 
     function setOptions(options){
@@ -14,6 +14,8 @@ angular.module('affarisApp')
         hasDash : false,
         padding : false,
         stdHeight : true,
+        primary : false,
+        showDash : function(){},
         title : ''
       }
       if (options){
@@ -26,6 +28,9 @@ angular.module('affarisApp')
         result.hasReports = options.hasReports;
         result.hasMenu = result.hasFilters || result.hasAdd || result.hasReports;
         result.gridApi = options.gridApi;
+        result.toggleFilters = options.toggleFilters;
+        result.showDash = options.showDash;
+        result.primary = options.primary;
       }
       return result;
     }
@@ -43,11 +48,17 @@ angular.module('affarisApp')
         panelBody.addClass('std-height');
       }
       if (scope.options.hasGrid){
-        //console.log(scope.options);
         scope.$watch('options',function(newValue,oldValue){
-          console.log(newValue);
           scope.gridApi = scope.options.gridApi;
         });
+      }
+
+      if (scope.options.primary){
+
+        elem.find('header').addClass('bg-primary');
+        $timeout(function(){
+          elem.find('.controls .btn-default').removeClass('btn-default').addClass('btn-primary');
+        },100);
       }
 
       elem.on('mouseenter',function(){
@@ -112,11 +123,13 @@ angular.module('affarisApp')
               $('body').css({overflow:'auto'});
               panelBody.addClass('std-height');
               elem.find('.ui-grid').css('height','');
-              scope.resize();
+
             }
           );
       }
       }
+
+
 
     }
 
@@ -124,10 +137,7 @@ angular.module('affarisApp')
       templateUrl: 'components/panel/panel.html',
       restrict: 'A',
       scope:{
-        panel:'=',
-        fullgrid:'=',
-        resize:'&',
-        toggleFilters: '&'
+        panel:'='
       },
       transclude:true,
       link: link

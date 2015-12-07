@@ -1,14 +1,17 @@
 {
-    "directives.language-select.Language": "Language",
-    "Inicio" : "Home",
-    "Login" : "Login",
-    "Proyectos" : "Projects",
-    "Hola Hola" : "hello hello",
-    "Servicios" : "Services",
-    "SeleccioneOBusque": "Select or search...",
-    "Filtros" : "Filters",
-   "Agregar" : "Add",
-   "Reportes":"Reports"
-
+  "directives.language-select.Language": "Language",
+  "Inicio": "Home",
+  "Login": "Login",
+  "Logout": "Logout",
+  "Proyectos": "Projects",
+  "Servicios": "Services",
+  "SeleccioneOBusque": "Select or search...",
+  "Filtros": "Filters",
+  "Agregar": "Add",
+  "Reportes": "Reports",
+  "Usuarios": "Users",
+  "Clientes": "Clients",
+  "Configuracion": "Settings",
+  "Tareas": "Tasks"
 
 }
