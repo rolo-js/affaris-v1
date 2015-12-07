@@ -4,6 +4,11 @@
     "Login" : "Login",
     "Proyectos" : "Projects",
     "Hola Hola" : "hello hello",
-    "Servicios" : "Services"
+    "Servicios" : "Services",
+    "SeleccioneOBusque": "Select or search...",
+    "Filtros" : "Filters",
+   "Agregar" : "Add",
+   "Reportes":"Reports"
+
 
 }

@@ -1,17 +1,27 @@
 header
 
   div.controls.pull-right
-    a.btn.btn-default(href="#",ng-click="fullscreen()",ng-if="allowFullscreen") 
-      i.fa.fa-expand.fa-fw
-    div.dropdown.pull-right(ng-if="hasMenu") &nbsp;
-      a.btn.btn-default.dropdown-toggle(data-toggle="dropdown")
+    button.btn.btn-sm.btn-default(href="#",ng-click="dash()", ng-if="options.hasDash") 
+      i.fa.fa-dashboard
+    button.btn.btn-sm.btn-default(href="#",ng-click="fullscreen()",ng-if="options.hasFull") 
+      i.fa.fa-expand
+    div.dropdown.pull-right(ng-if="options.hasMenu") &nbsp;
+      a.btn.btn-sm.btn-default.dropdown-toggle(data-toggle="dropdown",href="#")
         i.fa.fa-ellipsis-v.fa-fw
       ul.dropdown-menu
-        li
-          a(href="#",ng-click="toggleFilters()") Filtros
-        li(ng-repeat="item in menuitems")
-          a(href="#")
-            | {{item.name}}
+        li(ng-if="options.hasFilters")
+          a(href="#",ng-click="toggleFilters()")
+            i.fa.fa-filter.fa-fw
+            | &nbsp;{{'Filtros' | translate}}
+        li.divider(ng-if="options.hasFilters")
+        li(ng-if="options.hasAdd")
+          a(href="#",ng-click="add()")
+            i.fa.fa-plus.fa-fw
+            |  &nbsp;{{'Agregar' | translate}}      
+        li(ng-if="options.hasReports")
+          a(href="#",ng-click="reports()")
+            i.fa.fa-table.fa-fw
+            |  &nbsp;{{'Reportes' | translate}}      
   div.htitle
     | {{panel.title}}            
 div.p-body(ng-transclude)

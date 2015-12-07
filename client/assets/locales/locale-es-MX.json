@@ -1,10 +1,12 @@
 {
+    "directives.language-select.Language": "Idioma",
     "Inicio" : "Inicio",
     "Login" : "Bienvenido",
     "Hola Hola" : "Hola Hola" ,
     "Proyectos" : "Proyectos",
     "Servicios" : "Servicios",
-
-
-    "directives.language-select.Language": "Idioma"
+    "SeleccioneOBusque": "Seleccione o búsque...",
+    "Filtros" : "Filtros",
+    "Agregar" : "Agregar",
+    "Reportes":"Reportes"
 }

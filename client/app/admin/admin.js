@@ -29,7 +29,7 @@ angular.module('affarisApp')
       });
     $stateProvider
       .state('users.detail', {
-        url: '/detail/:id',
+        url: '/detail/{id}',
         templateUrl: 'app/admin/users/users-detail.html',
         controller: 'UsersDetailCtrl'
       });

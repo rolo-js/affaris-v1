@@ -28,10 +28,8 @@ angular.module('affarisApp')
     //PANEL TEST
     $scope.panelOptions = {
       title : 'Información General',
-      allowFullscreen : true,
-      menuitems :[
-        { name:'First' },{name:'Segundo'}
-      ]
+      hasFull: true,
+      padding : true
     };
 
 

@@ -1,16 +1,21 @@
 .row
   div.col-xs-12.col-sm-6.col-md-6.col-lg-4
-    div(panel="panelOptions",fullgrid="true")
-      div.grid(id="userSearchGrid",ui-grid="gridOptions", ui-grid-auto-resize)
+    div(panel="panelOptions")
+      div.hidden-xs.grid(id="userSearchGrid",ui-grid="gridOptions", ui-grid-auto-resize ui-grid-selection)
+      div.hidden-sm.hidden-md.hidden-lg
+        ui-select(ng-model="selectedUser",theme="bootstrap")
+          ui-select-match(placeholder="{{'SeleccioneOBusque' | translate}}")
+            span(ng-bind="$select.selected.email")
+          ui-select-choices(repeat="item in (userlist | filter: $select.search) track by item._id")
+            span(ng-bind="item.email")
   div.col-xs-12.col-sm-6.col-md-6.col-lg-8
     div.selector
       ul.nav.nav-pills
         li(ui-sref-active="active")
           a(ui-sref="users.dash") Dashboard
-        li(ui-sref-active="active")
-          a(ui-sref="users.detail") Detalle
+        li(ui-sref-active="active",ng-class="{disabled: !selectedUser}",ng-disabled="!selectedUser")
+          a(ui-sref="users.detail({id:selectedUser.id})") {{selectedUser ? selectedUser.nick : 'User'}}
         li(ui-sref-active="active")
           a(ui-sref="users.list") Lista
       hr
     div.ui-view
-    

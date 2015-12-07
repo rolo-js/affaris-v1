@@ -10,7 +10,9 @@ angular.module('affarisApp', [
   'pascalprecht.translate',// angular-translate
   'tmh.dynamicLocale',// angular-dynamic-locale
   'ui.grid',
-  'ui.grid.autoResize'
+  'ui.grid.autoResize',
+  'ui.grid.selection',
+  'ui.select' //angular-ui-select
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
@@ -68,7 +70,7 @@ angular.module('affarisApp', [
   })
 
   .config(function ($translateProvider,tmhDynamicLocaleProvider) {
-    $translateProvider.useSanitizeValueStrategy('sanitize');
+    //$translateProvider.useSanitizeValueStrategy('sanitize'); // Se quito porque estaba escapando los acentos
     $translateProvider.useMissingTranslationHandlerLog();
     $translateProvider.useStaticFilesLoader({
        prefix: 'assets/locales/locale-',// path to translations files

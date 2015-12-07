@@ -28,84 +28,62 @@
   .p-body{
     padding: 15px 0 15px 15px;
     overflow-y: scroll;
-    height: 450px;
-
+    &.nopadding{
+      padding: 0;
+      .ui-grid{
+        border:none;
+      }
+    }
+    &.std-height{
+      height:450px;
+    }
   }
-  .p-body-fullgrid{
-    padding: 0;
+
+
+  .pbody.std-height{
     height: 450px;
-
   }
-
-  /*
-   * SCROLLER
-   */
-	// .p-body::-webkit-scrollbar {
-	// 	-webkit-overflow-scrolling: touch;
-	// 	height: 15px;
-	// 	width: 15px;
-	//  }
-	// .p-body::-webkit-scrollbar-button:start:decrement,
-	// .p-body::-webkit-scrollbar-button:end:increment {
-	// 	background: transparent;
-	// 	display: block;
-	// 	height: 0;
-	// }
-	// .p-body::-webkit-scrollbar-track {
-  //
-  //   background-clip: padding-box;
-  //   // border-width: 0 0 0 4px;
-  //   // border: solid black;
-  //   background-color: transparent;
-  // }
-  // .p-body::-webkit-scrollbar-thumb {
-	// 	background-clip: padding-box;
-  //   border: 1px solid transparent;
-  //   border-width: 0 0 0 5px;
-  //   background-color: #e2e2e7;
-  //
-  // }
 
 
 /*
  * FORMS
  */
 
-  input[type=text].form-control,input[type=email].form-control,
-  textarea.form-control{
-    border: 0;
-    background: none;
-    // border-bottom: 1px solid #ccc;
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 1.4em;
-    font-weight: bold;
-    max-width:100%;
-    &:focus{
-      outline: 0;
-      box-shadow: none;
-
-    }
-    &[readonly]{
-      background: none;
-    }
-  }
-  .form-group label{
-    font-weight: 300;
-    color: #888;
-    margin-bottom: 0;
-  }
-  .from-group:hover label{
-    font-weight: 400;
-    color:#333  ;
-  }
-  button[type=submit]{
-    border-radius: 50%;
-    padding:0;
-    border:0;
-
-  }
-  a.submit:hover i:first-child{
-    color:#f00;
-  }
+  // input[type=text].form-control,input[type=email].form-control,
+  // textarea.form-control{
+  //   border: 0;
+  //   background: none;
+  //   // border-bottom: 1px solid #ccc;
+  //   border-radius: 0;
+  //   box-shadow: none;
+  //   font-size: 1.4em;
+  //   font-weight: bold;
+  //   max-width:100%;
+  //   &:focus{
+  //     outline: 0;
+  //     box-shadow: none;
+  //
+  //   }
+  //   &[readonly]{
+  //     background: none;
+  //   }
+  // }
+  // .form-group label{
+  //   font-weight: 300;
+  //   color: #888;
+  //   margin-bottom: 0;
+  // }
+  // .from-group:hover label{
+  //   font-weight: 400;
+  //   color:#333  ;
+  // }
+  // button[type=submit]{
+  //   border-radius: 50%;
+  //   padding:0;
+  //   border:0;
+  //
+  // }
+  // a.submit:hover i:first-child{
+  //   color:#f00;
+  // }
 }
