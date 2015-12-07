@@ -35,6 +35,11 @@
     &.std-height{
       height:450px;
     }
+    &.auto-height{
+      height:auto;
+      padding: 15px;
+      overflow-y: visible;
+    }
     .ui-grid{
       border:none;
       height:420px;
@@ -49,6 +54,28 @@
  * FORMS
  */
 
+ .form-group>label{
+   font-weight: lighter;
+ }
+ .form-group:hover>label{
+  font-weight: normal;
+ }
+ .form-group>.form-control{
+   font-weight: bold;
+   font-size: 1.4em;
+   &[disabled], &[readonly]{
+     background-color: #fff;
+     border: none;
+     box-shadow: none;
+     cursor:inherit;
+     font-size: 1.4em;
+     padding-left: 0;
+   }
+ }
+
+.ui-grid-row{
+  height:40px;
+}
   // input[type=text].form-control,input[type=email].form-control,
   // textarea.form-control{
   //   border: 0;

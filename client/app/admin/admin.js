@@ -33,4 +33,9 @@ angular.module('affarisApp')
         templateUrl: 'app/admin/users/users-detail.html',
         controller: 'UsersDetailCtrl'
       });
-  });
+    $stateProvider
+      .state('admin.users.edit', {
+        url: '/edit/{id}',
+        templateUrl: 'app/admin/users/users-edit.html',
+        controller: 'UsersEditCtrl'
+      });  });

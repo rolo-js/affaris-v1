@@ -13,6 +13,7 @@ angular.module('affarisApp')
       }
 
       $scope.gridOptions = {
+        rowHeight: 40,
         gridMenuShowHideColumns: false,
         enableColumnMenus: false,
         enableFiltering: true,
@@ -55,6 +56,21 @@ angular.module('affarisApp')
           $scope.gridApi.core.notifyDataChange(uiGridConstants.dataChange.COLUMN);
         }
       }
+
+      $scope.panelOptionsPhone = {
+        hasFull: true,
+        hasAdd: true,
+        hasReports: true,
+        hasDash: true,
+        padding: true,
+        primary: true,
+        stdHeight:false,
+        showDash: function() {
+          $state.go('admin.users.dash');
+        }
+      }
+
+
 
       User.summary(function(data) {
         $scope.gridOptions.data = data;

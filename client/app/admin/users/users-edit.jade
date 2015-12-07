@@ -2,20 +2,20 @@ div(panel="panelOptions",panel-name="user.email")
   form(id="formx")
     .form-group
       label(for="exampleInputEmail1") Email address
-      input#exampleInputEmail1.form-control(type="email",value="rriosarias@hotmail.com",readonly)
+      input#exampleInputEmail1.form-control(type="email",value="rriosarias@hotmail.com")
     .form-group
       label(for="exampleInputPassword1") Password
-      input#exampleInputPassword1.form-control(type="text",value="Password",readonly)
+      input#exampleInputPassword1.form-control(type="text",value="Password")
     hr
     .form-group
       .checkbox
         label
-          input(type="checkbox",disabled) 
+          input(type="checkbox") 
           | Check me out
     hr
     .form-group
       label(for="txt") Area de Texto
-      textarea#txt.form-control(readonly)
+      textarea#txt.form-control
         |sample test
     a.submit(href="#",onclick="$('#sbmt').click()") 
       span.fa-stack.fa-lg

@@ -9,9 +9,11 @@ angular.module('affarisApp')
         hasFull : false,
         hasGrid : false,
         hasFilters : false,
-        hasAdd : false,
         hasReports : false,
         hasDash : false,
+        hasAdd : false,
+        onCopy : undefined,
+        hasDelete : false,
         padding : false,
         stdHeight : true,
         primary : false,
@@ -31,6 +33,9 @@ angular.module('affarisApp')
         result.toggleFilters = options.toggleFilters;
         result.showDash = options.showDash;
         result.primary = options.primary;
+        result.onEdit = options.onEdit;
+        result.onCopy = options.onCopy;
+        result.stdHeight = options.stdHeight;
       }
       return result;
     }
@@ -46,6 +51,8 @@ angular.module('affarisApp')
       }
       if (scope.options.stdHeight){
         panelBody.addClass('std-height');
+      } else {
+        panelBody.addClass('auto-height');
       }
       if (scope.options.hasGrid){
         scope.$watch('options',function(newValue,oldValue){
@@ -137,7 +144,8 @@ angular.module('affarisApp')
       templateUrl: 'components/panel/panel.html',
       restrict: 'A',
       scope:{
-        panel:'='
+        panel:'=',
+        panelName:'='
       },
       transclude:true,
       link: link
