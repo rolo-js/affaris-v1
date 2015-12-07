@@ -35,6 +35,8 @@ angular.module('affarisApp')
         result.primary = options.primary;
         result.onEdit = options.onEdit;
         result.onCopy = options.onCopy;
+        result.onUndo = options.onUndo;
+        result.onSave = options.onSave;
         result.stdHeight = options.stdHeight;
       }
       return result;
@@ -75,6 +77,9 @@ angular.module('affarisApp')
         elem.find('.controls').removeClass('active');
       });
       scope.isfull=false;
+
+
+      scope.editing = false;
 
       scope.fullscreen = function(){
         //GOING TO FULLSCREEN
@@ -136,6 +141,19 @@ angular.module('affarisApp')
       }
       }
 
+
+      scope.call_onEdit = function(){
+        scope.editing = true;
+        scope.options.onEdit();
+      }
+      scope.call_onSave = function(){
+        scope.editing = false;
+        scope.options.onSave();
+      }
+      scope.call_onUndo = function(){
+        scope.editing = false;
+        scope.options.onUndo();
+      }
 
 
     }

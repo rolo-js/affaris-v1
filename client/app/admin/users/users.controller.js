@@ -7,7 +7,7 @@ angular.module('affarisApp')
       $scope.user = {} // for user selection
 
       $scope.phoneSelected = function(item) {
-        $state.go('admin.users.detail', {
+        $state.go('admin.users.detail.info', {
           id: item.id
         });
       }
@@ -29,10 +29,14 @@ angular.module('affarisApp')
         onRegisterApi: function(gridApi) {
           $scope.gridApi = gridApi;
           $scope.panelOptions.gridApi = gridApi;
-          gridApi.selection.on.rowSelectionChanged($scope, function(row) {
+          gridApi.selection.on.rowSelectionChanged($scope, function(row, ev) {
             $scope.user.selected = row.entity;
-            $state.go('admin.users.detail', {
-              id: row.entity.id
+            var switchTo = $state.current.name;
+            if ($state.includes('admin.users.dash')){
+              switchTo = "admin.users.detail.info"
+            }
+            $state.go(switchTo, {
+              id:row.entity.id
             });
           });
         }
@@ -50,6 +54,7 @@ angular.module('affarisApp')
         primary: true,
         showDash: function() {
           $state.go('admin.users.dash');
+          $scope.gridApi.selection.clearSelectedRows();
         },
         toggleFilters: function() {
           $scope.gridOptions.enableFiltering = !$scope.gridOptions.enableFiltering;
@@ -69,6 +74,32 @@ angular.module('affarisApp')
           $state.go('admin.users.dash');
         }
       }
+
+
+      $scope.editing=false;
+      $scope.detailPanelOptions = {
+        hasFull: true,
+        hasGrid: false,
+        hasFilters: false,
+        hasAdd: true,
+        hasReports: false,
+        hasDash: false,
+        padding: true,
+        primary: false,
+        stdHeight : true,
+        onEdit: function() {
+          $scope.$broadcast('userEdit');
+        },
+        onSave: function(){
+          $scope.$broadcast('userSave');
+        },
+        onUndo: function(){
+          $scope.$broadcast('userUndo')
+        }
+      }
+
+
+
 
 
 

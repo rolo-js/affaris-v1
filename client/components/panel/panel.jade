@@ -1,12 +1,13 @@
 header
 
-  div.controls.pull-right
-    button.btn.btn-sm.btn-default(href="#",ng-click="options.onEdit()", ng-if="options.onEdit") 
+  div.controls.pull-right(ng-if="!editing")
+    button.btn.btn-sm.btn-default(href="#",ng-click="call_onEdit()", ng-if="options.onEdit") 
       i.fa.fa-pencil
     button.btn.btn-sm.btn-default(href="#",ng-click="options.showDash()", ng-if="options.hasDash") 
       i.fa.fa-dashboard
     button.btn.btn-sm.btn-default(href="#",ng-click="fullscreen()",ng-if="options.hasFull") 
       i.fa.fa-expand
+
     div.dropdown.pull-right(ng-if="options.hasMenu") &nbsp;
       a.btn.btn-sm.btn-default.dropdown-toggle(data-toggle="dropdown",href="#")
         i.fa.fa-ellipsis-v.fa-fw
@@ -24,6 +25,12 @@ header
           a(href="#",ng-click="reports()")
             i.fa.fa-table.fa-fw
             |  &nbsp;{{'Reportes' | translate}}      
+
+  div.contols.pull-right(ng-if="editing")
+      button.btn.btn-sm.btn-success(href="#",ng-click="call_onSave()") 
+        i.fa.fa-save
+      button.btn.btn-sm.btn-default(href="#",ng-click="call_onUndo()") 
+        i.fa.fa-save          
   div.htitle
     | {{panelName}}            
 div.p-body(ng-transclude)

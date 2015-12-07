@@ -1,0 +1,23 @@
+form(id="formx")
+  .form-group
+    label(for="exampleInputEmail1") Email address
+    input#exampleInputEmail1.form-control(type="email",ng-model="user.email",readonly)
+  .form-group
+    label(for="exampleInputPassword1") Alias
+    input#exampleInputPassword1.form-control(type="text",ng-model="user.nick",ng-disabled="!editing")
+  hr
+  .form-group
+    .checkbox
+      label
+        input(type="checkbox",disabled) 
+        | Check me out
+  hr
+  .form-group
+    label(for="txt") Area de Texto
+    textarea#txt.form-control(readonly)
+      |sample test
+  //- a.submit(href="#",onclick="$('#sbmt').click()") 
+  //-   span.fa-stack.fa-lg
+  //-     i.fa.fa-circle.fa-stack-2x.text-primary
+  //-     i.fa.fa-floppy-o.fa-stack-1x.fa-inverse
+  //- button.btn.btn-default(type="submit",id="sbmt") submit

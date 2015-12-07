@@ -1,16 +1,6 @@
 'use strict';
 
 angular.module('affarisApp')
-  .controller('UsersDashCtrl', function ($scope,User) {
-    $scope.panelOptions ={
-      title: 'Usuarios'
-    }
+  .controller('UsersDashCtrl', function ($scope) {
 
-    $scope.gridOptions ={
-      columnDefs:[
-        {field:'email'},
-        {field:'nick',width:100}
-      ]
-    }
-    $scope.gridOptions.data = User.query();
   });
