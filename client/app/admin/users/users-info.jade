@@ -1,7 +1,7 @@
-form(id="formx")
+form(name="infoform")
   .form-group
     label(for="exampleInputEmail1") Email address
-    input#exampleInputEmail1.form-control(type="email",ng-model="user.email",readonly)
+    input#exampleInputEmail1.form-control(type="email",ng-model="user.email",ng-disabled="!editing")
   .form-group
     label(for="exampleInputPassword1") Alias
     input#exampleInputPassword1.form-control(type="text",ng-model="user.nick",ng-disabled="!editing")
@@ -16,6 +16,12 @@ form(id="formx")
     label(for="txt") Area de Texto
     textarea#txt.form-control(readonly)
       |sample test
+  p
+    button(ng-click="goEdit()") Editar
+  p(ng-if="editing")
+    button.btn.btn-success(ng-click="submit(infoform)") Salvar
+    button.btn.btn-default(ng-click="reset(infoform)") Cancelar
+  
   //- a.submit(href="#",onclick="$('#sbmt').click()") 
   //-   span.fa-stack.fa-lg
   //-     i.fa.fa-circle.fa-stack-2x.text-primary

@@ -7,41 +7,48 @@ angular.module('affarisApp')
         url: '/admin',
         template: '<ui-view />',
         abstract: true
-      });
-    $stateProvider
+      })
+
       .state('admin.users', {
         abstract: true,
         url: '/users',
         templateUrl: 'app/admin/users/users.html',
-        controller: 'UsersSearchCtrl'
-      });
-    $stateProvider
+        controller: 'UsersSearchCtrl',
+        resolve:{
+          usersSummary: ['User',function(User){
+          return User.summary();
+          }]
+        }
+      })
       .state('admin.users.dash', {
         url: '',
         templateUrl: 'app/admin/users/users-dash.html',
         controller: 'UsersDashCtrl'
-      });
-    $stateProvider
+      })
       .state('admin.users.detail', {
-        abstract:true,
+        //abstract:true,
         url: '/detail/{id}',
         templateUrl: 'app/admin/users/users-detail.html',
         controller: 'UsersDetailCtrl'
-      });
-    $stateProvider
-      .state('admin.users.detail.info', {
-        url: '',
-        templateUrl: 'app/admin/users/users-info.html',
-        controller: 'UsersInfoCtrl',
-        params:{
-          currentUser:null
+      })
+      .state('admin.users.detail.item', {
+        url: '/item/{itemid}',
+        templateUrl: function(params){ return 'app/admin/users/users-'+ params.itemid +'.html'},
+        controller: 'UsersItemCtrl'
+      })
+      .state('admin.users.detail.item.edit',{
+        views:{
+          '@admin.users.detail':{
+            templateUrl:function(params){ return 'app/admin/users/users-'+ params.itemid +'.html'},
+            controller:'UsersEditCtrl'
+          }
         }
-      });
-    $stateProvider
-      .state('admin.users.detail.profiles', {
-        url: '/profiles',
-        templateUrl: 'app/admin/users/users-profiles.html',
-        controller: 'UsersProfilesCtrl'
-      });
+      })
+    // $stateProvider
+    //   .state('admin.users.detail.profiles', {
+    //     url: '/profiles',
+    //     templateUrl: 'app/admin/users/users-profiles.html',
+    //     controller: 'UsersProfilesCtrl'
+    //   });
 
   });

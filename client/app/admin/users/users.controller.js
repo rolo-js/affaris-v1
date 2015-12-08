@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('affarisApp')
-  .controller('UsersSearchCtrl', ['$scope', 'User', '$state', '$timeout', 'uiGridConstants', '$filter',
-    function($scope, User, $state, $timeout, uiGridConstants, $filter) {
+  .controller('UsersSearchCtrl', ['$scope', 'User', '$state','$stateParams', '$timeout', 'uiGridConstants', '$filter','usersSummary',
+    function($scope, User, $state, $stateParams, $timeout, uiGridConstants, $filter, usersSummary) {
 
       $scope.user = {} // for user selection
 
@@ -31,13 +31,18 @@ angular.module('affarisApp')
           $scope.panelOptions.gridApi = gridApi;
           gridApi.selection.on.rowSelectionChanged($scope, function(row, ev) {
             $scope.user.selected = row.entity;
+            //Si vamos de dashboard a un item, nos vamos al estado info (default)
+            // pero si ya esta dentro de detail.item, nos aseguramos que
+            // permanezca en el mismo.
             var switchTo = $state.current.name;
+            var params = $stateParams;
             if ($state.includes('admin.users.dash')){
-              switchTo = "admin.users.detail.info"
+              switchTo = "admin.users.detail.item";
+              params = {id: row.entity.id, itemid:'info'}
+            } else{
+              params.id = row.entity.id;
             }
-            $state.go(switchTo, {
-              id:row.entity.id
-            });
+            $state.go(switchTo, params);
           });
         }
       }
@@ -103,11 +108,11 @@ angular.module('affarisApp')
 
 
 
-      User.summary(function(data) {
-        $scope.gridOptions.data = data;
-        $scope.userlist = data;
+      // User.summary(function(data) {
+        $scope.gridOptions.data = usersSummary;
+        $scope.userlist = usersSummary;
         if ($state.params.id) {
-          var entity = _.find(data, {
+          var entity = _.find(usersSummary, {
             id: $state.params.id
           });
           $scope.user.selected = entity;
@@ -115,6 +120,6 @@ angular.module('affarisApp')
             $scope.gridApi.selection.selectRow(entity);
           }, 50)
         }
-      });
+      // });
     }
   ]);

@@ -12,6 +12,7 @@
   "Usuarios": "Users",
   "Clientes": "Clients",
   "Configuracion": "Settings",
-  "Tareas": "Tasks"
-
+  "Tareas": "Tasks",
+  "Salvar": "Save",
+  "Cancelar": "Cancel"
 }

@@ -51,7 +51,11 @@ body{
     background-color: #d2d2d7;
   }
 
-
+// Utility classes
+span.space::after{
+  content:' ';
+  width:10px;
+}
 
 
 

@@ -1,8 +1,8 @@
 div(panel="detailPanelOptions",panel-name="user.email")
   ul.nav.nav-tabs
     li(ui-sref-active="active")
-      a(ui-sref="admin.users.detail.info") Info
+      a(ui-sref="admin.users.detail.item({itemid:'info'})") Info
     li(ui-sref-active="active")
-      a(ui-sref="admin.users.detail.profiles") Permisos
+      a(ui-sref="admin.users.detail.item({itemid:'profiles'})") Permisos
   br
   div.ui-view

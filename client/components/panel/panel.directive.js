@@ -152,6 +152,7 @@ angular.module('affarisApp')
       }
       scope.call_onUndo = function(){
         scope.editing = false;
+    
         scope.options.onUndo();
       }
 
