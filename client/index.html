@@ -22,7 +22,6 @@
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
-      <link rel="stylesheet" href="components/jarvis/jquery-ui.min.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
@@ -34,7 +33,7 @@
 
 <div ng-include='"components/navbar/navbar.html"'></div>
     <!-- Add your site or application content here -->
-    <div class="container-fluid">
+    <div class="container">
     <div ui-view=""></div>
   </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -99,13 +98,11 @@
           <script src="components/LocaleService/Locale.service.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
-          <script src="components/jarvis/jarvis.widget.js"></script>
-          <script src="components/jarvis/jarvisWidget/jarvisWidget.directive.js"></script>
-          <script src="components/jarvis/widgetGrid/widgetGrid.directive.js"></script>
           <script src="components/languageSelector/languageSelector.directive.js"></script>
           <script src="components/modal/modal.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
+          <script src="components/panel/fullscreen.directive.js"></script>
           <script src="components/panel/panel.directive.js"></script>
           <script src="components/socket/socket.service.js"></script>
           <script src="components/uiSrefActiveIf/uiSrefActiveIf.directive.js"></script>
